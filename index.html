@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Premium Streaming Maroc | اشتراكات رسمية</title>
+  <meta name="description" content="اشتراكات رقمية رسمية: Netflix, Spotify, YouTube Premium, Shahid, OSN+, Prime Video, Gift Cards. طلب سريع عبر واتساب." />
+
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --card:#12121a;
+      --text:#f4f4f7;
+      --muted:#b7b7c2;
+      --line:#242436;
+      --accent:#ff2b2b;
+      --ok:#33d17a;
+      --warn:#f5c211;
+      --shadow: 0 12px 40px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans Arabic", "Noto Kufi Arabic", sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(255,43,43,.25), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(51,209,122,.14), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,11,15,.72);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), #ff6b6b);
+      box-shadow: 0 10px 30px rgba(255,43,43,.25);
+    }
+    .navlinks{
+      display:flex; gap:14px; flex-wrap:wrap;
+      font-size:14px; color:var(--muted);
+    }
+    .navlinks a{ text-decoration:none; padding:8px 10px; border-radius:12px }
+    .navlinks a:hover{ background: rgba(255,255,255,.06); color:var(--text) }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.08);
+      text-decoration:none; font-weight:700; cursor:pointer;
+      transition:.15s transform, .15s background;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px) }
+    .btn-primary{
+      background: linear-gradient(135deg, var(--ok), #22c55e);
+      color:#06110a; border-color: rgba(0,0,0,.08);
+      box-shadow: 0 18px 40px rgba(34,197,94,.18);
+    }
+    .btn-ghost{
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+    }
+    .hero{
+      padding:34px 0 10px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height:1.15;
+    }
+    .sub{
+      color:var(--muted);
+      font-size: 16px;
+      margin: 0 0 18px;
+      max-width: 62ch;
+    }
+    .badges{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin: 12px 0 22px;
+    }
+    .badge{
+      font-size:13px;
+      padding:8px 10px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.05);
+      border-radius:999px;
+      color: var(--text);
+    }
+    .badge b{ color: var(--ok) }
+    .card{
+      background: rgba(18,18,26,.9);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{
+      padding:18px;
+      display:flex; flex-direction:column; justify-content:space-between; gap:14px;
+      position:relative; overflow:hidden;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute; inset:-80px -80px auto auto;
+      width:220px; height:220px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,43,43,.35), transparent 60%);
+      transform: rotate(12deg);
+    }
+    .hero-card .small{
+      color:var(--muted); font-size:14px; margin:0;
+      position:relative;
+    }
+    .pricebox{
+      display:grid; gap:10px;
+      position:relative;
+    }
+    .priceRow{
+      display:flex; justify-content:space-between; gap:10px;
+      padding:10px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+      font-size:14px;
+    }
+    .pill{
+      font-weight:800;
+      padding:4px 10px;
+      border-radius:999px;
+      background: rgba(255,43,43,.18);
+      border:1px solid rgba(255,43,43,.22);
+      color: #ffd2d2;
+      white-space:nowrap;
+    }
+    section{ padding:26px 0 }
+    .section-title{
+      display:flex; justify-content:space-between; align-items:end; gap:12px; flex-wrap:wrap;
+      margin: 0 0 14px;
+    }
+    .section-title h2{ margin:0; font-size:22px }
+    .section-title p{ margin:0; color:var(--muted); font-size:14px }
+
+    .grid{
+      display:grid; gap:14px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .item{
+      padding:16px;
+    }
+    .item h3{ margin:0 0 6px; font-size:16px }
+    .item p{ margin:0; color:var(--muted); font-size:14px }
+    .tagrow{ margin-top:12px; display:flex; gap:8px; flex-wrap:wrap }
+    .tag{
+      font-size:12px; color:var(--muted);
+      padding:6px 8px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.04);
+    }
+
+    .packs{ grid-template-columns: repeat(3, 1fr); }
+    .pack{
+      padding:18px;
+      display:flex; flex-direction:column; gap:10px;
+      position:relative;
+    }
+    .pack .name{ font-weight:900; font-size:18px; margin:0 }
+    .pack .desc{ color:var(--muted); margin:0; font-size:14px }
+    .pack ul{ margin:0; padding:0 18px 0 0; color:var(--text) }
+    .pack li{ margin:6px 0; color:var(--muted) }
+    .pack .cta{
+      margin-top:auto;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .highlight{
+      border-color: rgba(51,209,122,.22);
+      box-shadow: 0 18px 46px rgba(34,197,94,.12);
+    }
+
+    .two{
+      display:grid; gap:14px;
+      grid-template-columns: 1fr 1fr;
+      align-items:stretch;
+    }
+    .faq{ padding:16px }
+    details{
+      border:1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding:12px 12px;
+      background: rgba(255,255,255,.04);
+      margin:10px 0;
+    }
+    summary{ cursor:pointer; font-weight:800 }
+    details p{ margin:8px 0 0; color:var(--muted); font-size:14px }
+
+    .footer{
+      padding:22px 0 40px;
+      color:var(--muted);
+      font-size:13px;
+      border-top:1px solid rgba(255,255,255,.08);
+      margin-top: 22px;
+    }
+
+    .wa-float{
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 999;
+      display:flex; gap:10px; align-items:center;
+    }
+    .wa-float .bubble{
+      padding:10px 12px;
+      border-radius: 999px;
+      background: rgba(18,18,26,.92);
+      border:1px solid rgba(255,255,255,.08);
+      color:var(--muted);
+      font-size:13px;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 980px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      .packs{ grid-template-columns: 1fr; }
+      .two{ grid-template-columns: 1fr; }
+      .navlinks{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ✅ غيّر هاد الرقم ديال واتساب -->
+  <script>
+    // IMPORTANT: Write number with country code, no +, no spaces. Example Morocco: 2126XXXXXXX
+    const WHATSAPP_NUMBER = "212600000000"; // <-- بدلها برقمك
+
+    const BRAND_NAME = "Premium Streaming Maroc"; // <-- تقدر تبدّل الاسم
+    const DEFAULT_MESSAGE = `سلام، بغيت نطلب اشتراك/خدمة من ${BRAND_NAME}.
+- الخدمة: (Netflix/Spotify/YouTube/...)
+- المدة: (1 شهر/3 شهور...)
+- الأداء: (CashPlus/Wafacash/Inwi Money/...)`;
+
+    function waLink(customMsg){
+      const msg = encodeURIComponent(customMsg || DEFAULT_MESSAGE);
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Update all whatsapp buttons
+      document.querySelectorAll("[data-wa]").forEach(a => a.href = waLink(a.getAttribute("data-wa-msg") || ""));
+      // Update brand name
+      document.querySelectorAll("[data-brand]").forEach(el => el.textContent = BRAND_NAME);
+    });
+  </script>
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-size:15px" data-brand>Premium Streaming Maroc</div>
+          <div style="font-size:12px; color:var(--muted)">Official Digital Subscriptions • طلب سريع</div>
+        </div>
+      </div>
+
+      <nav class="navlinks" aria-label="روابط">
+        <a href="#services">Services</a>
+        <a href="#packs">Packs</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="btn btn-primary" data-wa href="#">
+        <span>WhatsApp</span> <span aria-hidden="true">💬</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>اشتراكات رقمية <span style="color:var(--accent)">رسمية</span> بثمن مناسب 🇲🇦</h1>
+        <p class="sub">
+          Netflix • Spotify • YouTube Premium • Shahid • OSN+ • Prime Video • Gift Cards • Gaming
+          <br/>طلبك كيتم بسرعة عبر واتساب — خدمة محترمة وشفافة.
+        </p>
+
+        <div class="badges">
+          <div class="badge">✅ <b>Official</b> Services</div>
+          <div class="badge">⚡ تفعيل سريع</div>
+          <div class="badge">🔒 أمان وثقة</div>
+          <div class="badge">📲 Support عبر WhatsApp</div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" data-wa href="#">
+            طلب دابا عبر WhatsApp 💚
+          </a>
+          <a class="btn btn-ghost" href="#services">
+            شوف الخدمات ↓
+          </a>
+        </div>
+
+        <p style="margin-top:14px; color:var(--muted); font-size:13px">
+          ملاحظة: ❌ ما كنبيعوش حسابات مهكرة/مزوّرة — ✅ خدماتنا رسمية وبوضوح (month by month).
+        </p>
+      </div>
+
+      <aside class="card hero-card">
+        <p class="small">🔥 عروض سريعة (بدّل الأثمنة كيف بغيتي)</p>
+
+        <div class="pricebox" id="pricing">
+          <div class="priceRow">
+            <div><b>Netflix</b> • Premium</div>
+            <div class="pill">ابتداءً من XX درهم</div>
+          </div>
+          <div class="priceRow">
+            <div><b>Spotify</b> • Premium</div>
+            <div class="pill">ابتداءً من XX درهم</div>
+          </div>
+          <div class="priceRow">
+            <div><b>YouTube</b> • Premium</div>
+            <div class="pill">ابتداءً من XX درهم</div>
+          </div>
+          <div class="priceRow">
+            <div><b>Shahid</b> • VIP</div>
+            <div class="pill">ابتداءً من XX درهم</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; position:relative">
+          <a class="btn btn-primary" data-wa href="#">طلب عرض مناسب ✅</a>
+          <a class="btn btn-ghost" href="#packs">Packs 🎁</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-title">
+        <h2>Services • الخدمات</h2>
+        <p>اختار الخدمة وكتب لينا فالواتساب: الخدمة + المدة + طريقة الأداء</p>
+      </div>
+
+      <div class="grid">
+        <div class="card item">
+          <h3>Streaming</h3>
+          <p>Netflix • Shahid VIP • OSN+ • Prime Video • beIN Connect</p>
+          <div class="tagrow">
+            <span class="tag">Monthly</span><span class="tag">Fast Setup</span><span class="tag">Support</span>
+          </div>
+        </div>
+
+        <div class="card item">
+          <h3>Music</h3>
+          <p>Spotify Premium • Anghami Plus • Apple Music</p>
+          <div class="tagrow">
+            <span class="tag">Premium</span><span class="tag">Family Options</span><span class="tag">Stable</span>
+          </div>
+        </div>
+
+        <div class="card item">
+          <h3>Gaming</h3>
+          <p>PlayStation Plus • Xbox Game Pass • EA Play • Steam Wallet</p>
+          <div class="tagrow">
+            <span class="tag">Gift Cards</span><span class="tag">Top-up</span><span class="tag">Fast</span>
+          </div>
+        </div>
+
+        <div class="card item">
+          <h3>Gift Cards</h3>
+          <p>Google Play • Apple • Amazon • Netflix</p>
+          <div class="tagrow">
+            <span class="tag">Recharge</span><span class="tag">Safe</span><span class="tag">No Password</span>
+          </div>
+        </div>
+
+        <div class="card item">
+          <h3>Creator Tools</h3>
+          <p>Canva Pro • CapCut Pro • Grammarly</p>
+          <div class="tagrow">
+            <span class="tag">For Creators</span><span class="tag">Boost Work</span><span class="tag">Pro</span>
+          </div>
+        </div>
+
+        <div class="card item">
+          <h3>AI Tools</h3>
+          <p>ChatGPT Plus • Midjourney (حسب المتاح) • AI bundles</p>
+          <div class="tagrow">
+            <span class="tag">AI</span><span class="tag">Guidance</span><span class="tag">Setup</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn btn-primary" data-wa href="#">طلب خدمة الآن</a>
+        <a class="btn btn-ghost" href="#faq">أسئلة شائعة</a>
+      </div>
+    </section>
+
+    <!-- PACKS -->
+    <section id="packs">
+      <div class="section-title">
+        <h2>Packs • باقات</h2>
+        <p>باقات كتعاون الزبون يوفّر، وكتبيع أنت أكثر ✅</p>
+      </div>
+
+      <div class="grid packs">
+        <div class="card pack">
+          <p class="name">🎓 Pack Student</p>
+          <p class="desc">للطلاب والدراسة</p>
+          <ul>
+            <li>Spotify / Music</li>
+            <li>YouTube Premium</li>
+            <li>Canva Pro (اختياري)</li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn-primary" data-wa data-wa-msg="سلام، بغيت Pack Student. شحال الثمن وشنو المتاح دابا؟" href="#">طلب Pack</a>
+            <a class="btn btn-ghost" data-wa data-wa-msg="سلام، بغيت نعرف أثمنة Student Pack وطرق الأداء." href="#">استفسار</a>
+          </div>
+        </div>
+
+        <div class="card pack highlight">
+          <p class="name">🎥 Pack Creator</p>
+          <p class="desc">للصناع/اليوتيوبرز/تيكتوك</p>
+          <ul>
+            <li>Canva Pro</li>
+            <li>CapCut Pro</li>
+            <li>ChatGPT Plus (اختياري)</li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn-primary" data-wa data-wa-msg="سلام، بغيت Pack Creator (Canva + CapCut). شحال الثمن؟" href="#">طلب Pack</a>
+            <a class="btn btn-ghost" href="#faq">كيف خدام؟</a>
+          </div>
+        </div>
+
+        <div class="card pack">
+          <p class="name">👨‍👩‍👧‍👦 Pack Family</p>
+          <p class="desc">للدار والعائلة</p>
+          <ul>
+            <li>Netflix / Streaming</li>
+            <li>YouTube Premium</li>
+            <li>Spotify (اختياري)</li>
+          </ul>
+          <div class="cta">
+            <a class="btn btn-primary" data-wa data-wa-msg="سلام، بغيت Pack Family. واش كاين شهر بشهر؟" href="#">طلب Pack</a>
+            <a class="btn btn-ghost" data-wa data-wa-msg="سلام، بغيت نعرف شنو كاين فـ Family Pack." href="#">تفاصيل</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST + HOW IT WORKS -->
+    <section class="two">
+      <div class="card item">
+        <h3>Why us? علاش حنا؟</h3>
+        <p>
+          ✅ خدمات رسمية وشفافة • ⚡ سرعة فالرد • 🔒 احترام الخصوصية • 💬 دعم واتساب
+          <br/>كنخدمو Month by Month باش يبقى كلشي واضح.
+        </p>
+        <div class="tagrow">
+          <span class="tag">No hacked accounts</span>
+          <span class="tag">Clear terms</span>
+          <span class="tag">Morocco payments</span>
+        </div>
+      </div>
+
+      <div class="card item">
+        <h3>How it works? كيفاش كنخدمو؟</h3>
+        <p>
+          1) كترسل لينا فـ WhatsApp: الخدمة + المدة + الأداء<br/>
+          2) كنأكدّو المتاح والثمن<br/>
+          3) كتخلص بالطريقة المناسبة<br/>
+          4) كنفعّلو ليك وكنرسلو ليك الخطوات/التأكيد
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-title">
+        <h2>FAQ • أسئلة شائعة</h2>
+        <p>باش نقصّرو عليك فالشرح</p>
+      </div>
+
+      <div class="card faq">
+        <details>
+          <summary>واش كتبيعو حسابات مزوّرة؟</summary>
+          <p>لا. ❌ ما كنبيعوش حسابات مهكرة/مزوّرة. كنقدمو خدمات رسمية وبشكل واضح.</p>
+        </details>
+
+        <details>
+          <summary>شنو طرق الأداء؟</summary>
+          <p>حالياً: تواصل واتساب، وكنعطيوك طريقة الأداء المتاحة (CashPlus / Wafacash / Inwi Money / ... حسب الاتفاق).</p>
+        </details>
+
+        <details>
+          <summary>شحال كتاخذ مدة التفعيل؟</summary>
+          <p>غالباً من 5 حتى 30 دقيقة (إلا كان ضغط كنخبروك بالوقت).</p>
+        </details>
+
+        <details>
+          <summary>واش كاين ضمان؟</summary>
+          <p>كنخدمو بسياسة واضحة: شهر بشهر، وأي مشكل فالتفعيل كنحلوه بسرعة عبر الدعم.</p>
+        </details>
+
+        <details>
+          <summary>كيفاش نطلب؟</summary>
+          <p>ضغط على زر WhatsApp وكتب: الخدمة + المدة + الأداء. وغادي نجاوبوك بالثمن والخطوات.</p>
+        </details>
+
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-primary" data-wa href="#">سولنا فـ WhatsApp</a>
+          <a class="btn btn-ghost" href="#services">رجع للخدمات</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:space-between">
+        <div>
+          <b data-brand>Premium Streaming Maroc</b> • © <span id="yr"></span><br/>
+          <span style="color:var(--muted)">Digital subscriptions & services — Morocco</span>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn btn-ghost" data-wa href="#">WhatsApp</a>
+          <a class="btn btn-ghost" href="#faq">FAQ</a>
+          <a class="btn btn-ghost" href="#pricing">Pricing</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <div class="wa-float">
+    <div class="bubble">بغيتي تطلب دابا؟</div>
+    <a class="btn btn-primary" data-wa href="#" aria-label="WhatsApp floating button">WhatsApp 💬</a>
+  </div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
