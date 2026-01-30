@@ -1,48 +1,59 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>HUSON DIGITA | Official Digital Services</title>
-  <meta name="description" content="HUSON DIGITA — Streaming, gaming top-ups, gift cards, and social services. Pay with PayPal and confirm on WhatsApp."/>
+  <title>HUSON DIGITAL | IPTV & Digital Services</title>
+  <meta name="description" content="HUSON DIGITAL — IPTV, Streaming, Gaming top-ups, and Social services. Pay with PayPal and confirm on WhatsApp."/>
   <style>
     :root{
-      --bg:#07070b; --card:#0f0f18; --card2:#121220; --text:#f4f4f8; --muted:#b9b9c9;
-      --line:#242436; --accent:#ff2b2b; --ok:#22c55e; --warn:#fbbf24;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --r:18px; --max:1140px;
+      --bg:#05070c;
+      --card:rgba(12,16,26,.92);
+      --card2:rgba(16,21,34,.92);
+      --text:#f3f6ff;
+      --muted:#aeb8d7;
+      --line:rgba(255,255,255,.08);
+      --blue:#2b7cff;
+      --blue2:#60a5fa;
+      --ok:#22c55e;
+      --warn:#fbbf24;
+      --shadow:0 18px 60px rgba(0,0,0,.55);
+      --r:18px;
+      --max:1160px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0; color:var(--text);
+      margin:0;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans Arabic","Noto Kufi Arabic",sans-serif;
+      color:var(--text);
       background:
-        radial-gradient(900px 450px at 15% -10%, rgba(255,43,43,.22), transparent 60%),
-        radial-gradient(700px 380px at 90% 10%, rgba(34,197,94,.14), transparent 60%),
+        radial-gradient(1000px 520px at 10% -10%, rgba(43,124,255,.25), transparent 60%),
+        radial-gradient(700px 420px at 95% 10%, rgba(96,165,250,.18), transparent 60%),
+        radial-gradient(900px 520px at 50% 120%, rgba(34,197,94,.12), transparent 60%),
         var(--bg);
       line-height:1.65;
     }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:var(--max);margin:0 auto;padding:18px}
     header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(7,7,11,.72);
+      position:sticky;top:0;z-index:50;
+      background:rgba(5,7,12,.72);
       backdrop-filter: blur(10px);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px;min-width:240px}
-    .logo{
-      width:44px;height:44px;border-radius:14px;
-      background:linear-gradient(135deg,var(--accent),#ff6b6b);
+    .brand{display:flex;align-items:center;gap:12px;min-width:260px}
+    .mark{
+      width:46px;height:46px;border-radius:16px;
+      background:linear-gradient(135deg, rgba(43,124,255,1), rgba(96,165,250,1));
       display:grid;place-items:center;
-      font-weight:1000; color:#170404;
-      box-shadow:0 10px 32px rgba(255,43,43,.18);
-      letter-spacing:.5px;
+      box-shadow:0 16px 40px rgba(43,124,255,.22);
+      border:1px solid rgba(255,255,255,.10);
     }
-    .brand .name{font-weight:1000}
-    .brand .tag{font-size:12px;color:var(--muted)}
+    .mark svg{filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
+    .name{font-weight:1000;letter-spacing:.4px}
+    .tag{font-size:12px;color:var(--muted)}
     nav.links{display:flex;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:14px}
     nav.links a{padding:8px 10px;border-radius:12px}
     nav.links a:hover{background:rgba(255,255,255,.06);color:var(--text)}
@@ -53,56 +64,61 @@
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.06);
       font-weight:950;
-      transition:.15s transform;
+      transition:.15s transform, .15s filter;
       user-select:none;
     }
-    .btn:hover{transform:translateY(-1px)}
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.03)}
     .btn-primary{
-      background:linear-gradient(135deg,var(--ok),#22c55e);
+      background:linear-gradient(135deg,var(--ok),#16a34a);
       color:#06110a;border-color:rgba(0,0,0,.08);
       box-shadow:0 18px 40px rgba(34,197,94,.16);
     }
-    .btn-accent{
-      background:linear-gradient(135deg,var(--accent),#ff6b6b);
-      color:#1a0505;border-color:rgba(0,0,0,.08);
+    .btn-blue{
+      background:linear-gradient(135deg,var(--blue),var(--blue2));
+      color:#061022;border-color:rgba(0,0,0,.08);
+      box-shadow:0 18px 40px rgba(43,124,255,.18);
     }
+    .btn-ghost{background:rgba(255,255,255,.06)}
     .pill{
       padding:8px 10px;border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.05);
-      color:var(--muted); font-size:13px; font-weight:800;
+      color:var(--muted); font-size:13px; font-weight:900;
     }
     .lang button{
-      cursor:pointer;
-      border-radius:999px;
-      padding:8px 10px;
-      background:rgba(255,255,255,.06);
-      color:var(--text);
-      border:1px solid rgba(255,255,255,.10);
-      font-weight:900;
+      cursor:pointer;border-radius:999px;padding:8px 10px;
+      background:rgba(255,255,255,.06);color:var(--text);
+      border:1px solid rgba(255,255,255,.10);font-weight:900;
     }
     .lang button.active{
-      border-color:rgba(34,197,94,.55);
-      box-shadow:0 0 0 2px rgba(34,197,94,.16) inset;
+      border-color:rgba(43,124,255,.65);
+      box-shadow:0 0 0 2px rgba(43,124,255,.18) inset;
     }
 
     .card{
-      background:rgba(16,16,24,.92);
+      background:var(--card);
       border:1px solid rgba(255,255,255,.08);
       border-radius:var(--r);
       box-shadow:var(--shadow);
     }
-
     .hero{
-      padding:20px 0 6px;
+      padding:18px 0 6px;
       display:grid;
       grid-template-columns: 1.1fr .9fr;
       gap:14px;
       align-items:stretch;
     }
-    h1{margin:0 0 10px;font-size:clamp(28px,4vw,46px);line-height:1.12}
-    .sub{margin:0;color:var(--muted);max-width:80ch}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px}
+    .heroMain{padding:18px; position:relative; overflow:hidden}
+    .heroMain:before{
+      content:"";
+      position:absolute; inset:-120px -80px auto auto;
+      width:320px;height:320px;
+      background:radial-gradient(circle at 30% 30%, rgba(43,124,255,.35), transparent 60%);
+      transform:rotate(12deg);
+    }
+    h1{margin:0 0 10px;font-size:clamp(28px,4vw,46px);line-height:1.12; position:relative}
+    .sub{margin:0;color:var(--muted);max-width:85ch; position:relative}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 18px; position:relative}
     .badge{
       font-size:13px;padding:8px 10px;border-radius:999px;
       border:1px solid rgba(255,255,255,.10);
@@ -117,42 +133,29 @@
       border:1px solid rgba(255,255,255,.08);
       color:var(--muted);
       font-size:13px;
-    }
-    .quick{
-      padding:16px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
       position:relative;
-      overflow:hidden;
     }
-    .quick:before{
+    .noteBlue{border-color:rgba(43,124,255,.22)}
+    .noteWarn{border-color:rgba(251,191,36,.22); color:#ffe7b3}
+    .side{padding:16px; display:flex; flex-direction:column; gap:12px; position:relative; overflow:hidden}
+    .side:before{
       content:"";
-      position:absolute; inset:-100px -80px auto auto;
-      width:260px;height:260px;
-      background: radial-gradient(circle at 35% 35%, rgba(255,43,43,.28), transparent 60%);
-      transform: rotate(12deg);
+      position:absolute; inset:-120px auto auto -80px;
+      width:320px;height:320px;
+      background:radial-gradient(circle at 30% 30%, rgba(96,165,250,.22), transparent 60%);
+      transform:rotate(-8deg);
     }
-    .qrow{
+    .kpiRow{
       position:relative;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
       padding:10px 12px;
       border-radius:14px;
       background:rgba(255,255,255,.04);
       border:1px solid rgba(255,255,255,.08);
       font-size:14px;
     }
-    .qrow .tag{
-      font-weight:1000;
-      padding:4px 10px;
-      border-radius:999px;
-      background:rgba(34,197,94,.14);
-      border:1px solid rgba(34,197,94,.18);
-      color:#b8ffcf;
-      white-space:nowrap;
-    }
+    .kpiRow .k{font-weight:1000}
+    .kpiRow .v{font-weight:1000; color:#cfe3ff; background:rgba(43,124,255,.16); border:1px solid rgba(43,124,255,.18); padding:4px 10px; border-radius:999px; white-space:nowrap}
 
     section{padding:16px 0}
     .sectionTitle{
@@ -162,37 +165,29 @@
     .sectionTitle h2{margin:0;font-size:22px}
     .sectionTitle p{margin:0;color:var(--muted);font-size:14px}
 
-    .filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
-    .filters button{
-      cursor:pointer;
-      padding:10px 12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.05);
-      color:var(--text);
-      font-weight:950;
-    }
-    .filters button.active{border-color:rgba(255,43,43,.55); box-shadow:0 0 0 2px rgba(255,43,43,.14) inset}
-
     .grid{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
-    .item{padding:16px;display:flex;flex-direction:column;gap:12px}
-    .top{
-      display:flex;align-items:center;justify-content:space-between;gap:12px
+    .item{padding:16px;display:flex;flex-direction:column;gap:12px; position:relative; overflow:hidden}
+    .item:before{
+      content:"";
+      position:absolute; inset:auto -120px -120px auto;
+      width:260px;height:260px;
+      background:radial-gradient(circle at 35% 35%, rgba(43,124,255,.18), transparent 60%);
+      transform:rotate(10deg);
+      pointer-events:none;
     }
-    .svc{
-      display:flex;align-items:center;gap:12px
-    }
+    .top{display:flex;align-items:center;justify-content:space-between;gap:12px; position:relative}
+    .svc{display:flex;align-items:center;gap:12px}
     .svcIcon{
-      width:46px;height:46px;border-radius:16px;
+      width:48px;height:48px;border-radius:16px;
       border:1px solid rgba(255,255,255,.10);
       background:rgba(255,255,255,.06);
       display:grid;place-items:center;
-      overflow:hidden;
-      flex:0 0 auto;
+      overflow:hidden; flex:0 0 auto;
     }
     .svcIcon img{width:100%;height:100%;object-fit:cover}
     .svcName{margin:0;font-size:16px;font-weight:1000}
     .svcDesc{margin:0;color:var(--muted);font-size:13px}
-    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between; position:relative}
     select,input{
       background:rgba(255,255,255,.06);
       color:var(--text);
@@ -203,7 +198,10 @@
     }
     .price{font-weight:1000}
     .hint{color:var(--muted);font-size:13px}
+    .mini{display:flex;gap:8px;flex-wrap:wrap; align-items:center}
+    .mini .pill{font-size:12px}
 
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     details{
       border:1px solid rgba(255,255,255,.08);
       border-radius:14px;
@@ -214,7 +212,6 @@
     summary{cursor:pointer;font-weight:1000}
     details p{margin:8px 0 0;color:var(--muted);font-size:14px}
 
-    .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
     .footer{
       border-top:1px solid rgba(255,255,255,.08);
       margin-top:16px;
@@ -228,7 +225,7 @@
     }
     .bubble{
       padding:10px 12px;border-radius:999px;
-      background:rgba(16,16,24,.92);
+      background:rgba(12,16,26,.92);
       border:1px solid rgba(255,255,255,.08);
       color:var(--muted);
       box-shadow:var(--shadow);
@@ -247,37 +244,53 @@
 <body>
 
 <script>
-  // ✅ Your info
-  const BRAND = "HUSON DIGITA";
+  // ====== YOUR INFO ======
+  const BRAND = "HUSON DIGITAL";
   const WHATSAPP_NUMBER = "212702855273";
   const PAYPAL_EMAIL = "onhicham48@gmail.com";
 
-  // ✅ USD→MAD rate (edit anytime)
+  // USD → MAD rate (edit anytime)
   const FX_USD_TO_MAD = 10.0;
 
-  // ✅ Prices: put USD only (site shows USD + MAD automatically)
-  // If price is 0 => PayPal button will be disabled.
+  // ====== PRICES (USD only) ======
+  // Put your real prices later. If price is 0 => PayPal is disabled (to avoid wrong payments).
   const PRICES = {
+    // IPTV (device selection shown)
+    iptv_premium: { m1: 0, m3: 0, m6: 0, m12: 0 },
+    iptv_4k:      { m1: 0, m3: 0, m6: 0, m12: 0 },
+    iptv_sports:  { m1: 0, m3: 0, m6: 0, m12: 0 },
+    iptv_movies:  { m1: 0, m3: 0, m6: 0, m12: 0 },
+    iptv_series:  { m1: 0, m3: 0, m6: 0, m12: 0 },
+
     // Streaming
-    netflix: { m1: 0, m3: 0, m6: 0, m12: 0 },
-    disney:  { m1: 0, m3: 0, m6: 0, m12: 0 },
-    shahid:  { m1: 0, m3: 0, m6: 0, m12: 0 },
-    osn:     { m1: 0, m3: 0, m6: 0, m12: 0 },
-    prime:   { m1: 0, m3: 0, m6: 0, m12: 0 },
-    appletv: { m1: 0, m3: 0, m6: 0, m12: 0 },
-    crunchy: { m1: 0, m3: 0, m6: 0, m12: 0 },
-    bein:    { m1: 0, m3: 0, m6: 0, m12: 0 },
+    netflix:  { m1: 0, m3: 0, m6: 0, m12: 0 },
+    disney:   { m1: 0, m3: 0, m6: 0, m12: 0 },
+    shahid:   { m1: 0, m3: 0, m6: 0, m12: 0 },
+    osn:      { m1: 0, m3: 0, m6: 0, m12: 0 },
+    prime:    { m1: 0, m3: 0, m6: 0, m12: 0 },
+    appletv:  { m1: 0, m3: 0, m6: 0, m12: 0 },
+    crunchy:  { m1: 0, m3: 0, m6: 0, m12: 0 },
+    bein:     { m1: 0, m3: 0, m6: 0, m12: 0 },
 
     // Gaming
-    psplus:  { m1: 0, m3: 0, m12: 0 },
-    gamepass:{ m1: 0, m3: 0 },
-    steam:   { m1: 0 },
-    pubg:    { m1: 0 },
-    freefire:{ m1: 0 },
+    psplus:   { m1: 0, m3: 0, m12: 0 },
+    gamepass: { m1: 0, m3: 0 },
+    steam:    { m1: 0 },
+    pubg:     { m1: 0 },
+    freefire: { m1: 0 },
 
-    // Social (services on request)
-    social:  { m1: 0 }
+    // Social
+    social:   { m1: 0 }
   };
+
+  const DEVICES = [
+    { key:"smarttv", label_en:"Smart TV", label_ar:"Smart TV", label_dz:"Smart TV" },
+    { key:"android", label_en:"Android",  label_ar:"Android",  label_dz:"Android" },
+    { key:"iphone",  label_en:"iPhone",   label_ar:"iPhone",   label_dz:"iPhone" },
+    { key:"mag",     label_en:"MAG",      label_ar:"MAG",      label_dz:"MAG" },
+    { key:"fire",    label_en:"Fire Stick", label_ar:"Fire Stick", label_dz:"Fire Stick" },
+    { key:"pc",      label_en:"PC",       label_ar:"PC",       label_dz:"PC" },
+  ];
 
   const DUR = {
     en:{m1:"1 month",m3:"3 months",m6:"6 months",m12:"12 months"},
@@ -285,7 +298,7 @@
     dz:{m1:"شهر",m3:"3 شهور",m6:"6 شهور",m12:"12 شهر"},
   };
 
-  // ✅ Small “images” (SVG icons) — no download needed
+  // ====== “PRODUCT IMAGES” (SVG logos) ======
   function svgData(label, bg1, bg2){
     const svg = `
       <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96">
@@ -297,7 +310,7 @@
         </defs>
         <rect rx="22" ry="22" x="0" y="0" width="96" height="96" fill="url(#g)"/>
         <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle"
-              font-family="Arial" font-size="34" font-weight="900" fill="rgba(0,0,0,.75)">
+              font-family="Arial" font-size="30" font-weight="900" fill="rgba(0,0,0,.76)">
           ${label}
         </text>
       </svg>`;
@@ -305,115 +318,113 @@
   }
 
   const ICONS = {
-    netflix:  svgData("N", "#ff2b2b", "#ff6b6b"),
+    iptv_premium: svgData("IPTV", "#2b7cff", "#60a5fa"),
+    iptv_4k:      svgData("4K",   "#1d4ed8", "#93c5fd"),
+    iptv_sports:  svgData("SP",   "#2563eb", "#60a5fa"),
+    iptv_movies:  svgData("MV",   "#0ea5e9", "#7dd3fc"),
+    iptv_series:  svgData("SR",   "#3b82f6", "#a5b4fc"),
+
+    netflix:  svgData("N",  "#ff2b2b", "#ff6b6b"),
     disney:   svgData("D+", "#2563eb", "#60a5fa"),
-    shahid:   svgData("S", "#22c55e", "#86efac"),
-    osn:      svgData("O", "#a855f7", "#e879f9"),
-    prime:    svgData("P", "#0ea5e9", "#38bdf8"),
-    appletv:  svgData("", "#94a3b8", "#e2e8f0"),
-    crunchy:  svgData("C", "#f97316", "#fdba74"),
+    shahid:   svgData("S",  "#22c55e", "#86efac"),
+    osn:      svgData("O",  "#a855f7", "#e879f9"),
+    prime:    svgData("P",  "#0ea5e9", "#38bdf8"),
+    appletv:  svgData("",  "#94a3b8", "#e2e8f0"),
+    crunchy:  svgData("C",  "#f97316", "#fdba74"),
     bein:     svgData("be", "#7c3aed", "#c4b5fd"),
-    psplus:   svgData("PS", "#2563eb", "#93c5fd"),
-    gamepass: svgData("X", "#16a34a", "#86efac"),
-    steam:    svgData("S", "#0f172a", "#64748b"),
+
+    psplus:   svgData("PS", "#1d4ed8", "#93c5fd"),
+    gamepass: svgData("X",  "#16a34a", "#86efac"),
+    steam:    svgData("S",  "#0f172a", "#64748b"),
     pubg:     svgData("UC", "#f59e0b", "#fde68a"),
     freefire: svgData("FF", "#ef4444", "#fca5a5"),
+
     social:   svgData("SM", "#14b8a6", "#99f6e4"),
   };
 
+  // ====== I18N ======
   const I18N = {
-    en:{
-      heroTitle:"Official Digital Services",
-      heroSub:"Streaming • Gaming top-ups • Gift Cards • Social services — Pay with PayPal, confirm on WhatsApp.",
-      official:"100% official services", fast:"Fast activation", secure:"Secure support", support:"WhatsApp support",
-      cta1:"Order on WhatsApp", cta2:"View services",
-      quick:"Quick offers (edit prices later)",
-      services:"Services", pick:"Choose service + duration → Pay with PayPal → Confirm on WhatsApp.",
-      duration:"Duration", price:"Price", pay:"Pay with PayPal", confirm:"Confirm on WhatsApp", tx:"Transaction ID (optional)",
-      payments:"Payment methods", paymentsText:"PayPal (Visa/MasterCard) + WhatsApp support",
-      how:"How it works", howText:"1) Choose service & duration  2) Pay with PayPal  3) Confirm on WhatsApp  4) We activate fast",
-      trust:"Trust & policy", trustText:"We provide official services only. No hacked accounts. Support is available if any issue happens.",
+    darija:{
+      heroTitle:"HUSON DIGITAL",
+      heroSub:"IPTV • Streaming • Gaming • Social — خلّص بPayPal وأكد فالواتساب.",
+      official:"خدمات ديال الثقة", fast:"تفعيل سريع", secure:"دعم آمن", support:"دعم واتساب",
+      cta1:"طلب فواتساب", cta2:"شوف الستور",
+      howTitle:"كيفاش كنخدمو",
+      howText:"1) تختار البروداكت + المدة (+ الجهاز فـ IPTV)  2) تخلص بPayPal  3) تأكيد فواتساب  4) كنفعّلو بسرعة",
+      noteNoHack:"⚠️ ما كنبيعوش hacked accounts ولا ولوج غير قانوني.",
+      store:"Store", iptv:"IPTV", streaming:"Streaming", gaming:"Gaming", social:"Social",
+      duration:"المدة", device:"الجهاز", price:"الثمن", pay:"خلص بPayPal", confirm:"أكد فWhatsApp", tx:"Transaction ID (اختياري)",
+      payments:"طرق الدفع", paymentsText:"PayPal (Visa/Master) + دعم واتساب",
+      trust:"الثقة", trustText:"خدمات رسمية/قانونية فقط. إذا وقع شي مشكل كنعاونك فالواتساب.",
       faq:"FAQ",
-      faq1q:"Is it official?", faq1a:"Yes — official services only.",
-      faq2q:"Activation time?", faq2a:"Usually 5–30 minutes depending on demand.",
-      faq3q:"Refund / guarantee?", faq3a:"We clarify terms before payment and support you if there is an issue.",
-      filterAll:"All", filterStreaming:"Streaming", filterGaming:"Gaming", filterSocial:"Social",
-      supportTitle:"Need help?", supportText:"If you face any issue, contact WhatsApp support and we will help you.",
-      noteNoHack:"⚠️ We do NOT sell hacked accounts or illegal access.",
-      pricesNote:"Prices are placeholders now (0). Set USD prices in PRICES inside index.html.",
+      faq1q:"شحال كتاخد الخدمة؟", faq1a:"غالباً 5–30 دقيقة حسب الضغط.",
+      faq2q:"كيفاش نخلص؟", faq2a:"كتخلص بPayPal ومن بعد كتأكد فالواتساب.",
+      faq3q:"IPTV كيخدم فاش؟", faq3a:"كيخدم فـ Smart TV / Android / iPhone / MAG / Fire Stick / PC (اختار الجهاز).",
+      supportTitle:"مساعدة؟", supportText:"إلى وقع شي مشكل، ضغط على WhatsApp support وغادي نجاوبوك.",
+      pricesNote:"ملاحظة: دابا الأثمنة 0. عمّر أثمنة USD فـ PRICES داخل index.html باش يتفعل PayPal.",
+      verified:"PayPal Verified",
+      sectionIptv:"قسم IPTV",
+      sectionIptvSub:"اختار الباقة + المدة + الجهاز — وكمّل الأداء.",
     },
     ar:{
-      heroTitle:"خدمات رقمية رسمية",
-      heroSub:"ستريمنغ • شحن الألعاب • كروت رقمية • خدمات السوشيال — أداء عبر بايبال وتأكيد عبر واتساب.",
-      official:"خدمات رسمية 100%", fast:"تفعيل سريع", secure:"دعم آمن", support:"دعم واتساب",
-      cta1:"اطلب عبر واتساب", cta2:"شوف الخدمات",
-      quick:"عروض سريعة (غيّر الأثمنة من بعد)",
-      services:"الخدمات", pick:"اختار الخدمة والمدة → خلّص ببايبال → أكد الطلب فالواتساب.",
-      duration:"المدة", price:"الثمن", pay:"الأداء عبر PayPal", confirm:"تأكيد عبر WhatsApp", tx:"رقم العملية (اختياري)",
+      heroTitle:"HUSON DIGITAL",
+      heroSub:"IPTV • ستريمنغ • ألعاب • سوشيال — ادفع عبر PayPal وأكد عبر واتساب.",
+      official:"خدمات موثوقة", fast:"تفعيل سريع", secure:"دعم آمن", support:"دعم واتساب",
+      cta1:"اطلب عبر واتساب", cta2:"عرض المتجر",
+      howTitle:"كيف نعمل؟",
+      howText:"1) اختر المنتج + المدة (+ الجهاز في IPTV)  2) ادفع عبر PayPal  3) أكد الطلب عبر واتساب  4) تفعيل سريع",
+      noteNoHack:"⚠️ لا نبيع حسابات مهكرة أو وصول غير قانوني.",
+      store:"المتجر", iptv:"IPTV", streaming:"ستريمنغ", gaming:"ألعاب", social:"سوشيال",
+      duration:"المدة", device:"الجهاز", price:"السعر", pay:"ادفع عبر PayPal", confirm:"تأكيد واتساب", tx:"رقم العملية (اختياري)",
       payments:"طرق الدفع", paymentsText:"PayPal (Visa/MasterCard) + دعم واتساب",
-      how:"كيفاش كنخدمو؟", howText:"1) كتختار الخدمة والمدة  2) كتخلص ببايبال  3) كتأكد فالواتساب  4) كنفعّلو بسرعة",
-      trust:"الثقة والسياسة", trustText:"كنقدمو خدمات رسمية فقط. ماكيناش حسابات مهكرة. وإذا كان شي مشكل كنعاونوك فالدعم.",
+      trust:"الثقة", trustText:"خدمات رسمية/قانونية فقط. في حال أي مشكلة ندعمك عبر واتساب.",
       faq:"أسئلة شائعة",
-      faq1q:"واش رسمي؟", faq1a:"نعم — خدمات رسمية فقط.",
-      faq2q:"شحال كتاخد؟", faq2a:"غالباً بين 5 و30 دقيقة حسب الضغط.",
-      faq3q:"ضمان/استرجاع؟", faq3a:"كنوضحوا الشروط قبل الأداء وأي مشكل كنحلوه عبر الدعم.",
-      filterAll:"الكل", filterStreaming:"ستريمنغ", filterGaming:"ألعاب", filterSocial:"سوشيال",
-      supportTitle:"باغي مساعدة؟", supportText:"إذا وقع شي مشكل فطلبك تواصل معنا فالواتساب وغادي نعاونك.",
-      noteNoHack:"⚠️ ما كنبيعوش حسابات مهكرة ولا ولوج غير قانوني.",
-      pricesNote:"الأثمنة دابا غير بلايص (0). عمّر أثمنة USD فـ PRICES داخل index.html.",
+      faq1q:"كم يستغرق التفعيل؟", faq1a:"غالباً 5–30 دقيقة حسب الضغط.",
+      faq2q:"كيف أدفع؟", faq2a:"تدفع عبر PayPal ثم تؤكد عبر واتساب.",
+      faq3q:"هل IPTV يعمل على الأجهزة؟", faq3a:"يعمل على Smart TV / Android / iPhone / MAG / Fire Stick / PC (اختر الجهاز).",
+      supportTitle:"تحتاج مساعدة؟", supportText:"إذا واجهت مشكلة، تواصل عبر واتساب وسنساعدك.",
+      pricesNote:"ملاحظة: الأسعار الآن 0. ضع أسعار USD في PRICES داخل index.html لتفعيل PayPal.",
+      verified:"PayPal موثّق",
+      sectionIptv:"قسم IPTV",
+      sectionIptvSub:"اختر الباقة + المدة + الجهاز — ثم أكمل الدفع.",
     },
-    darija:{
-      heroTitle:"خدمات رقمية ديال الثقة",
-      heroSub:"Streaming • شحن الألعاب • Gift Cards • خدمات السوشيال — PayPal + تأكيد واتساب.",
-      official:"رسمية 100%", fast:"تفعيل سريع", secure:"خدمة آمنة", support:"دعم واتساب",
-      cta1:"طلب فواتساب", cta2:"شوف الخدمات",
-      quick:"عروض سريعة (بدّل الثمن من بعد)",
-      services:"Services", pick:"اختار الخدمة والمدة → خلّص بPayPal → أكد فالواتساب.",
-      duration:"المدة", price:"الثمن", pay:"خلص بPayPal", confirm:"أكد فWhatsApp", tx:"Transaction ID (اختياري)",
-      payments:"طرق الدفع", paymentsText:"PayPal (Visa/Master) + دعم واتساب",
-      how:"كيفاش كنخدمو", howText:"1) تختار الخدمة والمدة  2) تخلص بPayPal  3) تأكيد فواتساب  4) كنفعّلو بسرعة",
-      trust:"الثقة", trustText:"خدمات رسمية فقط ✅ ماشي مهكر. إلا وقع شي مشكل كنعاونوك فواتساب.",
+    en:{
+      heroTitle:"HUSON DIGITAL",
+      heroSub:"IPTV • Streaming • Gaming • Social — Pay with PayPal and confirm on WhatsApp.",
+      official:"Trusted services", fast:"Fast activation", secure:"Secure support", support:"WhatsApp support",
+      cta1:"Order on WhatsApp", cta2:"View Store",
+      howTitle:"How it works",
+      howText:"1) Choose product + duration (+ device for IPTV)  2) Pay with PayPal  3) Confirm on WhatsApp  4) Fast activation",
+      noteNoHack:"⚠️ No hacked accounts or illegal access.",
+      store:"Store", iptv:"IPTV", streaming:"Streaming", gaming:"Gaming", social:"Social",
+      duration:"Duration", device:"Device", price:"Price", pay:"Pay with PayPal", confirm:"Confirm on WhatsApp", tx:"Transaction ID (optional)",
+      payments:"Payment methods", paymentsText:"PayPal (Visa/MasterCard) + WhatsApp support",
+      trust:"Trust", trustText:"Official/legal services only. If any issue happens, WhatsApp support will help you.",
       faq:"FAQ",
-      faq1q:"واش رسمي؟", faq1a:"اييه ✅ خدمات رسمية فقط.",
-      faq2q:"شحال كتاخد؟", faq2a:"غالباً 5–30 دقيقة.",
-      faq3q:"ضمان؟", faq3a:"كنوضحوا الشروط قبل الأداء وأي مشكل كنحلوه فالدعم.",
-      filterAll:"All", filterStreaming:"Streaming", filterGaming:"Gaming", filterSocial:"Social",
-      supportTitle:"باغي تعاون؟", supportText:"إلى وقع شي مشكل فطلبك تواصل معنا فالواتساب وغادي نعاونك.",
-      noteNoHack:"⚠️ ما كنبيعوش hacked accounts.",
-      pricesNote:"الأثمنة دابا بلايص (0). عمّر ثمن USD فـ PRICES داخل index.html.",
+      faq1q:"Activation time?", faq1a:"Usually 5–30 minutes depending on demand.",
+      faq2q:"How to pay?", faq2a:"Pay with PayPal then confirm on WhatsApp.",
+      faq3q:"IPTV devices?", faq3a:"Smart TV / Android / iPhone / MAG / Fire Stick / PC (choose device).",
+      supportTitle:"Need help?", supportText:"If you face any issue, contact WhatsApp support and we will help you.",
+      pricesNote:"Note: prices are 0 now. Set USD prices in PRICES inside index.html to enable PayPal.",
+      verified:"PayPal Verified",
+      sectionIptv:"IPTV Section",
+      sectionIptvSub:"Choose package + duration + device — then pay.",
     }
   };
 
-  let LANG = "darija";
-  let FILTER = "all";
-
-  const SERVICES = [
-    // Streaming
-    {key:"netflix",  name:"Netflix",      cat:"streaming", desc_en:"Official subscription", desc_ar:"اشتراك رسمي", desc_dz:"اشتراك رسمي"},
-    {key:"disney",   name:"Disney+",      cat:"streaming", desc_en:"Official subscription", desc_ar:"اشتراك رسمي", desc_dz:"اشتراك رسمي"},
-    {key:"shahid",   name:"Shahid VIP",   cat:"streaming", desc_en:"Official subscription", desc_ar:"اشتراك رسمي", desc_dz:"اشتراك رسمي"},
-    {key:"osn",      name:"OSN+",         cat:"streaming", desc_en:"Official subscription", desc_ar:"اشتراك رسمي", desc_dz:"اشتراك رسمي"},
-    {key:"prime",    name:"Prime Video",  cat:"streaming", desc_en:"Official subscription", desc_ar:"اشتراك رسمي", desc_dz:"اشتراك رسمي"},
-    {key:"appletv",  name:"Apple TV+",    cat:"streaming", desc_en:"Official subscription", desc_ar:"اشتراك رسمي", desc_dz:"اشتراك رسمي"},
-    {key:"crunchy",  name:"Crunchyroll",  cat:"streaming", desc_en:"Official subscription", desc_ar:"اشتراك رسمي", desc_dz:"اشتراك رسمي"},
-    {key:"bein",     name:"beIN CONNECT", cat:"streaming", desc_en:"Official subscription", desc_ar:"اشتراك رسمي", desc_dz:"اشتراك رسمي"},
-
-    // Gaming
-    {key:"psplus",   name:"PlayStation Plus", cat:"gaming", desc_en:"Subscription / top-up", desc_ar:"اشتراك/شحن", desc_dz:"اشتراك/شحن"},
-    {key:"gamepass", name:"Xbox Game Pass",   cat:"gaming", desc_en:"Subscription",         desc_ar:"اشتراك",     desc_dz:"اشتراك"},
-    {key:"steam",    name:"Steam Wallet",     cat:"gaming", desc_en:"Top-up",               desc_ar:"شحن",        desc_dz:"شحن"},
-    {key:"pubg",     name:"PUBG UC",          cat:"gaming", desc_en:"Top-up",               desc_ar:"شحن",        desc_dz:"شحن"},
-    {key:"freefire", name:"Free Fire Diamonds",cat:"gaming",desc_en:"Top-up",               desc_ar:"شحن",        desc_dz:"شحن"},
-
-    // Social (on request)
-    {key:"social",   name:"Social Services",  cat:"social", desc_en:"On request (ask details)", desc_ar:"حسب الطلب (سولنا)", desc_dz:"حسب الطلب (سولنا)"},
-  ];
-
+  let LANG = "darija"; // default as you requested
   const t = (k)=> (I18N[LANG] && I18N[LANG][k]) || I18N.en[k] || k;
 
+  // ====== HELPERS ======
   function setDir(){
     document.documentElement.lang = (LANG==="en") ? "en" : "ar";
     document.documentElement.dir  = (LANG==="en") ? "ltr" : "rtl";
+  }
+
+  function formatPrice(usd){
+    if (!usd || usd<=0) return "XX";
+    const mad = Math.round(usd * FX_USD_TO_MAD);
+    return `$${usd}  •  ${mad} MAD`;
   }
 
   function paypalBuyNow(itemName, amountUSD){
@@ -433,210 +444,261 @@
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
   }
 
-  function waConfirm(serviceName, durationLabel, txid){
+  function waConfirm({product, durationLabel, deviceLabel, priceText, txid}){
     const msg =
 `Salam/Hi 👋
 Order confirmation:
 - Brand: ${BRAND}
-- Service: ${serviceName}
+- Product: ${product}
 - Duration: ${durationLabel}
+- Device: ${deviceLabel || "N/A"}
+- Price: ${priceText || "N/A"}
 - Payment: PayPal
 - Transaction ID: ${txid || "N/A"}
 (Please activate / deliver)`;
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
   }
 
-  function formatPrice(usd){
-    if (!usd || usd<=0) return "XX";
-    const mad = Math.round(usd * FX_USD_TO_MAD);
-    return `$${usd}  •  ${mad} MAD`;
+  function deviceLabel(devKey){
+    const d = DEVICES.find(x=>x.key===devKey);
+    if (!d) return "";
+    return (LANG==="en") ? d.label_en : (LANG==="ar" ? d.label_ar : d.label_dz);
   }
+
+  // ====== PRODUCTS ======
+  const IPTV_PRODUCTS = [
+    {key:"iptv_premium", name:"IPTV Premium", desc_dz:"باقة شاملة", desc_ar:"باقة شاملة", desc_en:"All-in-one package"},
+    {key:"iptv_4k",      name:"IPTV 4K",      desc_dz:"جودة 4K",    desc_ar:"جودة 4K",    desc_en:"4K quality"},
+    {key:"iptv_sports",  name:"IPTV Sports",  desc_dz:"رياضة",      desc_ar:"رياضة",      desc_en:"Sports package"},
+    {key:"iptv_movies",  name:"IPTV Movies",  desc_dz:"أفلام",      desc_ar:"أفلام",      desc_en:"Movies package"},
+    {key:"iptv_series",  name:"IPTV Series",  desc_dz:"سلاسل",      desc_ar:"مسلسلات",    desc_en:"Series package"},
+  ];
+
+  const STORE_PRODUCTS = [
+    // Streaming
+    {key:"netflix", name:"Netflix", cat:"streaming", desc_dz:"ستريمنغ رسمي", desc_ar:"ستريمنغ رسمي", desc_en:"Official streaming"},
+    {key:"disney",  name:"Disney+", cat:"streaming", desc_dz:"ستريمنغ رسمي", desc_ar:"ستريمنغ رسمي", desc_en:"Official streaming"},
+    {key:"shahid",  name:"Shahid VIP", cat:"streaming", desc_dz:"ستريمنغ رسمي", desc_ar:"ستريمنغ رسمي", desc_en:"Official streaming"},
+    {key:"osn",     name:"OSN+", cat:"streaming", desc_dz:"ستريمنغ رسمي", desc_ar:"ستريمنغ رسمي", desc_en:"Official streaming"},
+    {key:"prime",   name:"Prime Video", cat:"streaming", desc_dz:"ستريمنغ رسمي", desc_ar:"ستريمنغ رسمي", desc_en:"Official streaming"},
+    {key:"appletv", name:"Apple TV+", cat:"streaming", desc_dz:"ستريمنغ رسمي", desc_ar:"ستريمنغ رسمي", desc_en:"Official streaming"},
+    {key:"crunchy", name:"Crunchyroll", cat:"streaming", desc_dz:"أنمي", desc_ar:"أنمي", desc_en:"Anime"},
+    {key:"bein",    name:"beIN CONNECT", cat:"streaming", desc_dz:"رياضة", desc_ar:"رياضة", desc_en:"Sports"},
+
+    // Gaming
+    {key:"psplus",  name:"PlayStation Plus", cat:"gaming", desc_dz:"اشتراك/شحن", desc_ar:"اشتراك/شحن", desc_en:"Subscription/top-up"},
+    {key:"gamepass",name:"Xbox Game Pass",   cat:"gaming", desc_dz:"اشتراك", desc_ar:"اشتراك", desc_en:"Subscription"},
+    {key:"steam",   name:"Steam Wallet",     cat:"gaming", desc_dz:"شحن", desc_ar:"شحن", desc_en:"Top-up"},
+    {key:"pubg",    name:"PUBG UC",          cat:"gaming", desc_dz:"شحن", desc_ar:"شحن", desc_en:"Top-up"},
+    {key:"freefire",name:"Free Fire Diamonds",cat:"gaming",desc_dz:"شحن", desc_ar:"شحن", desc_en:"Top-up"},
+
+    // Social
+    {key:"social",  name:"Social Services",   cat:"social", desc_dz:"حسب الطلب", desc_ar:"حسب الطلب", desc_en:"On request"},
+  ];
 
   function renderStatic(){
     setDir();
     document.querySelectorAll("[data-i18n]").forEach(el=>{
       el.textContent = t(el.getAttribute("data-i18n"));
     });
-
     document.querySelectorAll("[data-lang]").forEach(btn=>{
       btn.classList.toggle("active", btn.getAttribute("data-lang")===LANG);
     });
-
-    document.querySelectorAll("[data-filter]").forEach(btn=>{
-      btn.classList.toggle("active", btn.getAttribute("data-filter")===FILTER);
-    });
-
     document.querySelectorAll("[data-wa-global]").forEach(a=>{
       a.href = waGlobal(); a.target="_blank"; a.rel="noopener";
     });
-
     document.getElementById("yr").textContent = new Date().getFullYear();
+    document.getElementById("fx").textContent = String(FX_USD_TO_MAD);
   }
 
-  function renderServices(){
-    const grid = document.getElementById("cards");
-    grid.innerHTML = "";
+  function makeCard({key, name, desc_dz, desc_ar, desc_en}, opts){
+    const withDevice = !!opts.withDevice;
 
-    const list = SERVICES.filter(s => FILTER==="all" ? true : s.cat===FILTER);
+    const card = document.createElement("div");
+    card.className = "card item";
 
-    list.forEach(svc=>{
-      const durKeys = Object.keys(PRICES[svc.key] || {});
-      const card = document.createElement("div");
-      card.className = "card item";
-      card.setAttribute("data-cat", svc.cat);
+    const top = document.createElement("div");
+    top.className = "top";
 
-      const top = document.createElement("div");
-      top.className = "top";
+    const left = document.createElement("div");
+    left.className = "svc";
 
-      const left = document.createElement("div");
-      left.className = "svc";
+    const icon = document.createElement("div");
+    icon.className = "svcIcon";
+    const img = document.createElement("img");
+    img.alt = name;
+    img.src = ICONS[key] || ICONS.social;
+    icon.appendChild(img);
 
-      const icon = document.createElement("div");
-      icon.className = "svcIcon";
-      const img = document.createElement("img");
-      img.alt = svc.name;
-      img.src = ICONS[svc.key] || svgData("HD","#ff2b2b","#ff6b6b");
-      icon.appendChild(img);
+    const meta = document.createElement("div");
+    const title = document.createElement("div");
+    title.className = "svcName";
+    title.textContent = name;
 
-      const meta = document.createElement("div");
-      const name = document.createElement("div");
-      name.className = "svcName";
-      name.textContent = svc.name;
+    const desc = document.createElement("div");
+    desc.className = "svcDesc";
+    desc.textContent = (LANG==="en") ? desc_en : (LANG==="ar" ? desc_ar : desc_dz);
 
-      const desc = document.createElement("div");
-      desc.className = "svcDesc";
-      desc.textContent =
-        (LANG==="en") ? svc.desc_en :
-        (LANG==="ar") ? svc.desc_ar : svc.desc_dz;
+    meta.appendChild(title);
+    meta.appendChild(desc);
 
-      meta.appendChild(name);
-      meta.appendChild(desc);
+    left.appendChild(icon);
+    left.appendChild(meta);
 
-      left.appendChild(icon);
-      left.appendChild(meta);
+    const right = document.createElement("div");
+    right.className = "mini";
+    right.innerHTML = withDevice
+      ? `<span class="pill">${t("device")}</span><span class="pill">${t("duration")}</span>`
+      : `<span class="pill">${t("duration")}</span><span class="pill">${t("payments")}</span>`;
 
-      const catPill = document.createElement("div");
-      catPill.className = "pill";
-      catPill.textContent =
-        svc.cat==="streaming" ? t("filterStreaming") :
-        svc.cat==="gaming" ? t("filterGaming") : t("filterSocial");
+    top.appendChild(left);
+    top.appendChild(right);
 
-      top.appendChild(left);
-      top.appendChild(catPill);
+    // selectors row
+    const row = document.createElement("div");
+    row.className = "row";
 
-      const row = document.createElement("div");
-      row.className = "row";
+    // duration select
+    const durSel = document.createElement("select");
+    durSel.id = "dur_"+key;
+    const durKeys = Object.keys(PRICES[key] || {});
+    durKeys.forEach(kDur=>{
+      const opt = document.createElement("option");
+      const label = (LANG==="en") ? (DUR.en[kDur]||kDur) : (LANG==="ar" ? (DUR.ar[kDur]||DUR.en[kDur]||kDur) : (DUR.dz[kDur]||DUR.en[kDur]||kDur));
+      opt.value = kDur;
+      opt.textContent = label;
+      durSel.appendChild(opt);
+    });
 
-      const hint = document.createElement("div");
-      hint.className = "hint";
-      hint.textContent = t("duration")+":";
-
-      const sel = document.createElement("select");
-      sel.id = "dur_"+svc.key;
-
-      // if service has no durations configured, show message
-      if (!durKeys.length){
+    // device select (optional)
+    let devSel = null;
+    if (withDevice){
+      devSel = document.createElement("select");
+      devSel.id = "dev_"+key;
+      DEVICES.forEach(d=>{
         const opt = document.createElement("option");
-        opt.value = "m1";
-        opt.textContent = (LANG==="en") ? "Contact us" : (LANG==="ar" ? "تواصل معنا" : "تواصل معنا");
-        sel.appendChild(opt);
-      }else{
-        durKeys.forEach(k=>{
-          const opt = document.createElement("option");
-          const label = (LANG==="en") ? (DUR.en[k]||k) : (LANG==="ar" ? (DUR.ar[k]||DUR.en[k]||k) : (DUR.dz[k]||DUR.en[k]||k));
-          opt.value = k;
-          opt.textContent = label;
-          sel.appendChild(opt);
-        });
-      }
+        opt.value = d.key;
+        opt.textContent = (LANG==="en") ? d.label_en : (LANG==="ar" ? d.label_ar : d.label_dz);
+        devSel.appendChild(opt);
+      });
+    }
 
-      const price = document.createElement("div");
-      price.className = "price";
-      price.id = "price_"+svc.key;
+    const price = document.createElement("div");
+    price.className = "price";
+    price.id = "price_"+key;
 
+    const hint = document.createElement("div");
+    hint.className = "hint";
+    hint.textContent = withDevice ? `${t("device")} + ${t("duration")}` : t("duration");
+
+    if (withDevice){
       row.appendChild(hint);
-      row.appendChild(sel);
+      row.appendChild(devSel);
+      row.appendChild(durSel);
       row.appendChild(price);
+    }else{
+      row.appendChild(hint);
+      row.appendChild(durSel);
+      row.appendChild(price);
+    }
 
-      const tx = document.createElement("input");
-      tx.placeholder = t("tx");
-      tx.id = "tx_"+svc.key;
-      tx.style.width = "100%";
+    // tx input
+    const tx = document.createElement("input");
+    tx.placeholder = t("tx");
+    tx.id = "tx_"+key;
+    tx.style.width = "100%";
 
-      const actions = document.createElement("div");
-      actions.className = "row";
+    // actions
+    const actions = document.createElement("div");
+    actions.className = "row";
 
-      const pay = document.createElement("a");
-      pay.className = "btn btn-accent";
-      pay.textContent = t("pay");
-      pay.target="_blank"; pay.rel="noopener";
+    const pay = document.createElement("a");
+    pay.className = "btn btn-blue";
+    pay.textContent = t("pay");
+    pay.target="_blank"; pay.rel="noopener";
 
-      const confirm = document.createElement("a");
-      confirm.className = "btn btn-primary";
-      confirm.textContent = t("confirm");
-      confirm.target="_blank"; confirm.rel="noopener";
+    const confirm = document.createElement("a");
+    confirm.className = "btn btn-primary";
+    confirm.textContent = t("confirm");
+    confirm.target="_blank"; confirm.rel="noopener";
 
-      function update(){
-        const dk = sel.value;
-        const usd = (PRICES[svc.key] && PRICES[svc.key][dk]) ? PRICES[svc.key][dk] : 0;
-        price.textContent = formatPrice(usd);
+    function update(){
+      const dk = durSel.value;
+      const usd = (PRICES[key] && PRICES[key][dk]) ? PRICES[key][dk] : 0;
+      const priceText = formatPrice(usd);
+      price.textContent = priceText;
 
-        const durLabelEn = DUR.en[dk] || dk;
-        const durLabel = (LANG==="en") ? durLabelEn : (LANG==="ar" ? (DUR.ar[dk]||durLabelEn) : (DUR.dz[dk]||durLabelEn));
+      const durLabelEn = DUR.en[dk] || dk;
+      const durLabel = (LANG==="en") ? durLabelEn : (LANG==="ar" ? (DUR.ar[dk]||durLabelEn) : (DUR.dz[dk]||durLabelEn));
 
-        // PayPal link
-        if (usd>0){
-          pay.href = paypalBuyNow(`${BRAND} - ${svc.name} (${durLabelEn})`, usd);
-          pay.style.opacity = "1";
-          pay.style.pointerEvents = "auto";
-        }else{
-          pay.href = "#";
-          pay.style.opacity = ".55";
-          pay.style.pointerEvents = "none";
-        }
+      const devKey = withDevice ? devSel.value : "";
+      const devLabel = withDevice ? deviceLabel(devKey) : "";
 
-        // WhatsApp confirm always works
-        confirm.href = waConfirm(svc.name, durLabel, tx.value.trim());
+      // PayPal: disable if 0
+      if (usd > 0){
+        pay.href = paypalBuyNow(`${BRAND} - ${name} (${durLabelEn})${withDevice ? " - " + (DEVICES.find(x=>x.key===devKey)?.label_en || devKey) : ""}`, usd);
+        pay.style.opacity = "1";
+        pay.style.pointerEvents = "auto";
+      }else{
+        pay.href = "#";
+        pay.style.opacity = ".55";
+        pay.style.pointerEvents = "none";
       }
 
-      sel.addEventListener("change", update);
-      tx.addEventListener("input", update);
+      confirm.href = waConfirm({
+        product: name,
+        durationLabel: durLabel,
+        deviceLabel: devLabel,
+        priceText,
+        txid: tx.value.trim()
+      });
+    }
 
-      actions.appendChild(pay);
-      actions.appendChild(confirm);
+    durSel.addEventListener("change", update);
+    if (withDevice) devSel.addEventListener("change", update);
+    tx.addEventListener("input", update);
 
-      card.appendChild(top);
-      card.appendChild(row);
-      card.appendChild(tx);
-      card.appendChild(actions);
+    actions.appendChild(pay);
+    actions.appendChild(confirm);
 
-      grid.appendChild(card);
-      update();
+    card.appendChild(top);
+    card.appendChild(row);
+    card.appendChild(tx);
+    card.appendChild(actions);
+
+    update();
+    return card;
+  }
+
+  function renderIPTV(){
+    const grid = document.getElementById("iptvCards");
+    grid.innerHTML = "";
+    IPTV_PRODUCTS.forEach(p=>{
+      grid.appendChild(makeCard(p, {withDevice:true}));
+    });
+  }
+
+  function renderStore(){
+    const grid = document.getElementById("storeCards");
+    grid.innerHTML = "";
+    STORE_PRODUCTS.forEach(p=>{
+      grid.appendChild(makeCard(p, {withDevice:false}));
     });
   }
 
   function setLang(newLang){
     LANG = newLang;
     renderStatic();
-    renderServices();
-  }
-
-  function setFilter(newFilter){
-    FILTER = newFilter;
-    renderStatic();
-    renderServices();
+    renderIPTV();
+    renderStore();
   }
 
   document.addEventListener("DOMContentLoaded", ()=>{
-    // default
+    // default language = darija
     setLang("darija");
 
     document.querySelectorAll("[data-lang]").forEach(btn=>{
       btn.addEventListener("click", ()=> setLang(btn.getAttribute("data-lang")));
-    });
-
-    document.querySelectorAll("[data-filter]").forEach(btn=>{
-      btn.addEventListener("click", ()=> setFilter(btn.getAttribute("data-filter")));
     });
   });
 </script>
@@ -644,16 +706,23 @@ Order confirmation:
 <header>
   <div class="wrap nav">
     <div class="brand">
-      <div class="logo">HD</div>
+      <div class="mark" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+          <path d="M7 7h10v10H7z" stroke="rgba(6,16,34,.85)" stroke-width="2.4" />
+          <path d="M5.5 9.5V6.5h3" stroke="rgba(6,16,34,.85)" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M18.5 14.5v3h-3" stroke="rgba(6,16,34,.85)" stroke-width="2.4" stroke-linecap="round"/>
+        </svg>
+      </div>
       <div>
-        <div class="name">HUSON DIGITA</div>
-        <div class="tag">PayPal payment • WhatsApp support • Morocco 🇲🇦</div>
+        <div class="name">HUSON DIGITAL</div>
+        <div class="tag">IPTV Pro • PayPal • WhatsApp Support • Morocco 🇲🇦</div>
       </div>
     </div>
 
     <nav class="links">
-      <a href="#services" data-i18n="services">Services</a>
-      <a href="#how" data-i18n="how">How</a>
+      <a href="#iptv" data-i18n="iptv">IPTV</a>
+      <a href="#store" data-i18n="store">Store</a>
+      <a href="#how" data-i18n="howTitle">How</a>
       <a href="#faq" data-i18n="faq">FAQ</a>
     </nav>
 
@@ -663,116 +732,115 @@ Order confirmation:
         <button type="button" data-lang="ar">عربية</button>
         <button type="button" data-lang="en">English</button>
       </div>
-      <a class="btn btn-primary" data-wa-global href="#" data-i18n="cta1">Order on WhatsApp</a>
+      <a class="btn btn-primary" data-wa-global href="#" data-i18n="cta1">طلب فواتساب</a>
     </div>
   </div>
 </header>
 
 <main class="wrap">
   <section class="hero">
-    <div class="card" style="padding:18px">
-      <h1 data-i18n="heroTitle">Official Digital Services</h1>
-      <p class="sub" data-i18n="heroSub">Streaming • Gaming top-ups • Gift cards • Social services — PayPal + WhatsApp.</p>
+    <div class="card heroMain">
+      <h1 data-i18n="heroTitle">HUSON DIGITAL</h1>
+      <p class="sub" data-i18n="heroSub">IPTV • Streaming • Gaming • Social — خلّص بPayPal وأكد فالواتساب.</p>
 
       <div class="badges">
-        <div class="badge">✅ <b data-i18n="official">100% official services</b></div>
-        <div class="badge">⚡ <span data-i18n="fast">Fast activation</span></div>
-        <div class="badge">🔒 <span data-i18n="secure">Secure support</span></div>
-        <div class="badge">💬 <span data-i18n="support">WhatsApp support</span></div>
+        <div class="badge">✅ <b data-i18n="official">خدمات ديال الثقة</b></div>
+        <div class="badge">⚡ <span data-i18n="fast">تفعيل سريع</span></div>
+        <div class="badge">🔒 <span data-i18n="secure">دعم آمن</span></div>
+        <div class="badge">💬 <span data-i18n="support">دعم واتساب</span></div>
+        <div class="badge">🅿️ <span data-i18n="verified">PayPal Verified</span></div>
       </div>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn btn-primary" data-wa-global href="#" data-i18n="cta1">Order on WhatsApp</a>
-        <a class="btn" href="#services" data-i18n="cta2">View services</a>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;position:relative">
+        <a class="btn btn-primary" data-wa-global href="#" data-i18n="cta1">طلب فواتساب</a>
+        <a class="btn btn-blue" href="#iptv" data-i18n="iptv">IPTV</a>
+        <a class="btn btn-ghost" href="#store" data-i18n="cta2">شوف الستور</a>
       </div>
 
-      <div class="note" data-i18n="pick">
-        Choose service + duration → Pay with PayPal → Confirm on WhatsApp.
+      <div class="note noteBlue" data-i18n="howText" id="howText">
+        1) تختار البروداكت + المدة (+ الجهاز فـ IPTV)  2) تخلص بPayPal  3) تأكيد فواتساب  4) كنفعّلو بسرعة
       </div>
 
-      <div class="note" style="border-color:rgba(251,191,36,.22); color:#ffe7b3">
-        <span data-i18n="noteNoHack">⚠️ We do NOT sell hacked accounts or illegal access.</span>
-      </div>
+      <div class="note noteWarn" data-i18n="noteNoHack">⚠️ ما كنبيعوش hacked accounts ولا ولوج غير قانوني.</div>
     </div>
 
-    <aside class="card quick">
-      <div style="position:relative">
-        <div style="color:var(--muted);font-size:14px;font-weight:1000" data-i18n="quick">Quick offers (edit prices later)</div>
-      </div>
-      <div class="qrow"><div><b>Netflix</b> Premium</div><div class="tag">USD + MAD</div></div>
-      <div class="qrow"><div><b>Shahid</b> VIP</div><div class="tag">PayPal</div></div>
-      <div class="qrow"><div><b>PS Plus</b></div><div class="tag">Fast</div></div>
-      <div class="qrow"><div><b>Gaming</b> Top-ups</div><div class="tag">Support</div></div>
+    <aside class="card side">
+      <div class="kpiRow"><span class="k">IPTV Pro</span><span class="v">Smart TV / Android / iPhone</span></div>
+      <div class="kpiRow"><span class="k">Payments</span><span class="v">PayPal • Visa • Master</span></div>
+      <div class="kpiRow"><span class="k">Support</span><span class="v">WhatsApp 24/7</span></div>
+      <div class="kpiRow"><span class="k">FX</span><span class="v">1 USD ≈ <span id="fx"></span> MAD</span></div>
+
+      <div class="note" data-i18n="pricesNote">ملاحظة: دابا الأثمنة 0. عمّر أثمنة USD فـ PRICES داخل index.html باش يتفعل PayPal.</div>
 
       <div style="display:flex;gap:10px;flex-wrap:wrap;position:relative">
         <a class="btn btn-primary" data-wa-global href="#">WhatsApp</a>
-        <a class="btn" href="#how" data-i18n="how">How</a>
+        <a class="btn btn-blue" href="#iptv" data-i18n="sectionIptv">قسم IPTV</a>
       </div>
-
-      <div class="note" data-i18n="pricesNote">Prices are placeholders now (0). Set USD prices in PRICES inside index.html.</div>
     </aside>
   </section>
 
-  <section id="services">
+  <!-- IPTV SECTION -->
+  <section id="iptv">
     <div class="sectionTitle">
-      <h2 data-i18n="services">Services</h2>
-      <p data-i18n="pick">Choose service + duration → Pay with PayPal → Confirm on WhatsApp.</p>
+      <h2 data-i18n="sectionIptv">قسم IPTV</h2>
+      <p data-i18n="sectionIptvSub">اختار الباقة + المدة + الجهاز — وكمّل الأداء.</p>
     </div>
-
-    <div class="filters">
-      <button type="button" data-filter="all" class="active" data-i18n="filterAll">All</button>
-      <button type="button" data-filter="streaming" data-i18n="filterStreaming">Streaming</button>
-      <button type="button" data-filter="gaming" data-i18n="filterGaming">Gaming</button>
-      <button type="button" data-filter="social" data-i18n="filterSocial">Social</button>
-    </div>
-
-    <div class="grid" id="cards"></div>
+    <div class="grid" id="iptvCards"></div>
   </section>
 
-  <section class="two">
+  <!-- STORE SECTION -->
+  <section id="store">
+    <div class="sectionTitle">
+      <h2 data-i18n="store">Store</h2>
+      <p data-i18n="paymentsText">PayPal (Visa/Master) + دعم واتساب</p>
+    </div>
+    <div class="grid" id="storeCards"></div>
+  </section>
+
+  <section class="two" id="how">
     <div class="card" style="padding:16px">
       <div class="sectionTitle" style="margin:0 0 10px">
-        <h2 data-i18n="payments">Payment methods</h2>
-        <p style="color:var(--muted)">Secure</p>
+        <h2 data-i18n="payments">طرق الدفع</h2>
+        <p>Secure</p>
       </div>
-      <p class="sub" style="margin:0" data-i18n="paymentsText">PayPal (Visa/MasterCard) + WhatsApp support</p>
+      <p class="sub" style="margin:0" data-i18n="paymentsText">PayPal (Visa/Master) + دعم واتساب</p>
       <div class="badges" style="margin-top:12px">
+        <div class="badge">🅿️ PayPal</div>
         <div class="badge">💳 Visa</div>
         <div class="badge">💳 MasterCard</div>
-        <div class="badge">🅿️ PayPal</div>
-        <div class="badge">📲 WhatsApp</div>
+        <div class="badge">💬 WhatsApp</div>
+        <div class="badge">🔒 SSL</div>
       </div>
-      <div class="note">💱 FX: 1 USD ≈ <b id="fx"></b> MAD</div>
-      <script>document.addEventListener("DOMContentLoaded",()=>{document.getElementById("fx").textContent = String(FX_USD_TO_MAD);});</script>
+      <div class="note noteBlue">
+        ✅ PayPal كيخلص بUSD — والثمن كيبان حتى MAD فالموقع.
+      </div>
     </div>
 
-    <div class="card" style="padding:16px" id="how">
+    <div class="card" style="padding:16px">
       <div class="sectionTitle" style="margin:0 0 10px">
-        <h2 data-i18n="how">How it works</h2>
+        <h2 data-i18n="howTitle">كيفاش كنخدمو</h2>
         <p>PayPal → WhatsApp → Activation</p>
       </div>
-      <div class="note" id="howText" data-i18n="howText">
-        1) Choose service & duration  2) Pay with PayPal  3) Confirm on WhatsApp  4) We activate fast
+      <div class="note noteBlue" data-i18n="howText">
+        1) تختار البروداكت + المدة (+ الجهاز فـ IPTV)  2) تخلص بPayPal  3) تأكيد فواتساب  4) كنفعّلو بسرعة
       </div>
       <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn btn-primary" data-wa-global href="#" data-i18n="cta1">Order on WhatsApp</a>
-        <a class="btn" href="#services" data-i18n="services">Services</a>
+        <a class="btn btn-primary" data-wa-global href="#" data-i18n="cta1">طلب فواتساب</a>
+        <a class="btn btn-blue" href="#iptv" data-i18n="iptv">IPTV</a>
       </div>
     </div>
   </section>
 
   <section>
     <div class="sectionTitle">
-      <h2 data-i18n="trust">Trust & policy</h2>
-      <p>Clear terms</p>
+      <h2 data-i18n="trust">الثقة</h2>
+      <p>Trusted</p>
     </div>
     <div class="card" style="padding:16px">
       <div class="sub" data-i18n="trustText">
-        We provide official services only. No hacked accounts. Support is available if any issue happens.
+        خدمات رسمية/قانونية فقط. إذا وقع شي مشكل كنعاونك فالواتساب.
       </div>
-      <div class="note" style="margin-top:12px">
-        ✅ Official services • 🔒 Privacy respected • 💬 Support via WhatsApp
-      </div>
+      <div class="note noteWarn" data-i18n="noteNoHack">⚠️ ما كنبيعوش hacked accounts ولا ولوج غير قانوني.</div>
     </div>
   </section>
 
@@ -783,32 +851,32 @@ Order confirmation:
     </div>
     <div class="card" style="padding:16px">
       <details>
-        <summary data-i18n="faq1q">Is it official?</summary>
-        <p data-i18n="faq1a">Yes — official services only.</p>
+        <summary data-i18n="faq1q">شحال كتاخد الخدمة؟</summary>
+        <p data-i18n="faq1a">غالباً 5–30 دقيقة حسب الضغط.</p>
       </details>
       <details>
-        <summary data-i18n="faq2q">Activation time?</summary>
-        <p data-i18n="faq2a">Usually 5–30 minutes depending on demand.</p>
+        <summary data-i18n="faq2q">كيفاش نخلص؟</summary>
+        <p data-i18n="faq2a">كتخلص بPayPal ومن بعد كتأكد فالواتساب.</p>
       </details>
       <details>
-        <summary data-i18n="faq3q">Refund / guarantee?</summary>
-        <p data-i18n="faq3a">We clarify terms before payment and support you if there is an issue.</p>
+        <summary data-i18n="faq3q">IPTV كيخدم فاش؟</summary>
+        <p data-i18n="faq3a">كيخدم فـ Smart TV / Android / iPhone / MAG / Fire Stick / PC (اختار الجهاز).</p>
       </details>
 
       <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn btn-primary" data-wa-global href="#" data-i18n="cta1">Order on WhatsApp</a>
-        <a class="btn" href="#services" data-i18n="services">Services</a>
+        <a class="btn btn-primary" data-wa-global href="#" data-i18n="cta1">طلب فواتساب</a>
+        <a class="btn btn-blue" href="#store" data-i18n="store">Store</a>
       </div>
     </div>
   </section>
 
   <section>
     <div class="sectionTitle">
-      <h2 data-i18n="supportTitle">Need help?</h2>
+      <h2 data-i18n="supportTitle">مساعدة؟</h2>
       <p>Support</p>
     </div>
     <div class="card" style="padding:16px">
-      <div class="sub" data-i18n="supportText">If you face any issue, contact WhatsApp support and we will help you.</div>
+      <div class="sub" data-i18n="supportText">إلى وقع شي مشكل، ضغط على WhatsApp support وغادي نجاوبوك.</div>
       <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn btn-primary" data-wa-global href="#">WhatsApp Support</a>
         <span class="pill">+212 702 855 273</span>
@@ -818,18 +886,18 @@ Order confirmation:
 
   <div class="footer">
     <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-      <div><b>HUSON DIGITA</b> • © <span id="yr"></span><br/><span>Digital services • Morocco</span></div>
+      <div><b>HUSON DIGITAL</b> • © <span id="yr"></span><br/><span>Digital services • Morocco</span></div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" data-wa-global href="#">WhatsApp</a>
-        <a class="btn" href="#services">Services</a>
-        <a class="btn" href="#faq">FAQ</a>
+        <a class="btn btn-ghost" data-wa-global href="#">WhatsApp</a>
+        <a class="btn btn-ghost" href="#iptv">IPTV</a>
+        <a class="btn btn-ghost" href="#store">Store</a>
       </div>
     </div>
   </div>
 </main>
 
 <div class="float">
-  <div class="bubble">Need help? بغيتي تعاون؟</div>
+  <div class="bubble">بغيتي تعاون؟</div>
   <a class="btn btn-primary" data-wa-global href="#">WhatsApp 💬</a>
 </div>
 
